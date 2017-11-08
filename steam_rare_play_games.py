@@ -10,7 +10,7 @@ blacklist_appids = [] # not idle this games.
 idle_appids = [] # idle this games when all other games are beyond max_hours [570,440] dota2, tf2 and etc.
 
 res = requests.get(
-    'http://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?key={0}&steamid={1}&format=json'.format(steam_key,
+    'http://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?key={0}&steamid={1}&include_played_free_games=1&format=json'.format(steam_key,
                                                                                                              steam_user_id))
 if res.status_code != 200:
     print 'request error'
